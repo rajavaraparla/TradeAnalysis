@@ -1,0 +1,16 @@
+Modules :
+Classes :
+---------
+Contains  All the class definitions related to Intra,IEOD,EOD
+
+Conf :
+-----
+This will contain files related to configuration.
+
+IntraStratagies :
+-----------------
+Stratagies related to IntraDay
+
+Utils :
+------
+utilities that will be used by all modules.

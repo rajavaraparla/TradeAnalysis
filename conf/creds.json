@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lyrical-medley-175516",
+  "private_key_id": "a592a8c35472935ac42c73403b0d3eaf4d5f32b3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZrE5Rt+f/2xDA\nPQW3GXPGgGXv1a5xISjgDXs3CB6HWXjhK3EiPTEC6qKwAq09iUc4rDxWa4Du8TAf\nK5hdE4YfUUSFMkGUd1Ykd1yGuD3vlpBzbpx1hExApIg64Vmsibri9Jw7VOhkKF4B\nyp0KcWXIe15p+1sZiuibeHC5yT5oPYbvCBakpkYhpq2zhdTUmrB1NZnuuc75TAZf\ns910ssrQR7wI0QHfRlUa29lAFzT9crqW33Kf+9asYssOJuUiqkdD2kKFs6s8PASD\nLBMaLbCAj22E27lGIyJ6HI0Q6sT8ivjPuRX9FW47yTbnwsbHGcWoo/uZKYUVbfqe\n04WwBhU5AgMBAAECggEAHaZ+Ugwe6mH1QHJFuQdjLEi34mejSdaxEVHolTyuz0S3\nKxL7uDSAUWS+USGjFX14TXoGBlKlxPSqaUk7E7JhrYc7pkuFFcVUzKJvKts/sAuo\nAW21KIOHRu24D0xNxhmpAoNZ5aTDVhfn04apeEta7SzIkcBa2nnP2beKYH5w2SHB\nZ9bBDZ1RCLOVymUov3UaMbNlwLuBD8BPbBxob+7cfZ5n893kw3cvwQ4RXlJCnf7R\n5DNXATKxczCz4ji25216uNtxOEEKzamHo1E7nWZ6rQhN/IVnfjjOAJ8XUm3+/oCr\n8DKfFcVXCRc16gkavNE39eCx5qifkZzwsCraY7a2RQKBgQDLY+rKTCqsqERuNPbO\n0nH40AWauXlALcCHKXhIzgzxONWfCaWxVEyG5QQKQZcgLTdPwv7TIJu30gOZUsKM\nfIRUWfnr2/miqBND2AR6YI0/lFBwwFf76PExe3J/bFEyvSoTWOstsOETSxKJOR1j\ndeLWBBed6leunAvdQx4tzhWrjwKBgQDBbDeUIKOhnMKA97TrZNEVSHkSntiAegKY\nfVEhcvnmNv/60UGcrXl8vSpMi/XzKSkESReaz17FbrmrGm5N6oyB/+ElkxuIdADN\nhv/bUaAdmol4Cz5HPbpjomzqAD5G/HmbVDbaQoTLDJs/BGd2biVTyyms3/Gtxs+I\nnWnG759utwKBgQCNSyRY1QDwYRTo2rJ6i4fRqfG6ww6QnzgYrZ56NWqYSTtd+H26\n6y0eqQpddaNfHwpFxtjwIr8KvELzyKKOphHn53nPeEm7zbdUckTqHxkBCi+3pGd7\nASBNl8y66Kyf6vnH5wW6AB7cIFMIMT1RUxv6QW2Grr2q94zmcTIN8BTt0QKBgQCm\n5iAXGwrW2xMigZuFOpsHiF+gZ5xdT+qJdijZegKUWYUMAiBhd3bK4ddr8aEqTqvr\n3L4XgTQ/nEltkQL5DJhtXEQETimF1sMSlZiUwJwurzhLczgr9OGuM2tThx411omA\nNGyYbKl1I82Z1M0J7gUbhsTRPPOnhVNyiJHLbNzfhQKBgBeOZuO4ry1AsjkFqOLf\n3GFgR5j/zjnTEI0adAyh367lBCLNyK9Sq3z5Hun9smUPytBSSRu9bhn265CwTW8u\nglo5pQXoupcTekdaXEnc6bOJAFljHKF/FrHwYztF5IsLksGiqIwvSzDObrklfhz7\n8xO87ogFTjxm6lBLo0xPGwcm\n-----END PRIVATE KEY-----\n",
+  "client_email": "tradeanalysis@lyrical-medley-175516.iam.gserviceaccount.com",
+  "client_id": "103741934413586252327",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tradeanalysis%40lyrical-medley-175516.iam.gserviceaccount.com"
+}
