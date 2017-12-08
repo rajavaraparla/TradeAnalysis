@@ -35,5 +35,13 @@ if __name__ == "__main__":
     # print([str(x) for x in olh_scripts])
     OLH_TRADES = olh.sheets_generate_olh_trade_data(OLH_SCRIPTS)
     trade_utils.generate_pdf_olh_intra(OLH_TRADES,"test.pdf")
-    print("\n".join(str(x) for x in OLH_TRADES))
-    trade_utils.generate_excel_olh_intra(OLH_TRADES,'test.xlsx')
+    # Load table 'intra_olh_trade' with olh_trade_data
+    for olh_trade_class in OLH_TRADES:
+        PARAMS = {}
+        PARAMS['ticker'] = olh_trade_class.script
+        PARAMS['ticker'] = olh_trade_class.script
+        print (str(olh_trade_class))
+        pass
+
+    #print("\n".join(str(x) for x in OLH_TRADES))
+    #trade_utils.generate_excel_olh_intra(OLH_TRADES,'test.xlsx')
