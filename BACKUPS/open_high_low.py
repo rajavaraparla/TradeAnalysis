@@ -6,10 +6,12 @@ import os # OS Related
 import sys
 import json # JSON related
 import gspread # Google Spread Sheets
-from conf.constants import * # Import constants
+
+from conf import  constants
 from oauth2client.client import SignedJwtAssertionCredentials # Authention related
 
 from Classes import OLHSheetsClass as OLH
+import time
 
 
 def sheets_get_olh_scripts_list(client):
@@ -18,7 +20,7 @@ def sheets_get_olh_scripts_list(client):
     Ex : {'NSE:KTKBANK': 'NSE', 'NSE:VEDL': 'NSE'}
     '''
     # Open WorkBook
-    workbook = client.open(INTRA_GOOGLE_SHEET_NAME)
+    workbook = client.open(constants.INTRA_GOOGLE_SHEET_NAME)
     # Open WorkSheet
     sheet = workbook.worksheet('TECHNICAL')
     #all_cells = SHEET.range('A1:C6')
@@ -35,11 +37,11 @@ def sheets_get_olh_scripts_list(client):
         # A3=>SCRIPT
         # K3 => NSE BUY/SELL
         # L3 => BSE BUY/SELL
-        scriptname = row[START]
+        scriptname = row[constants.START]
         if scriptname == '':
             continue
-        nse_signal = row[NSE_SIGNAL_INDEX]
-        bse_signal = row[BSE_SIGNAL_INDEX]
+        nse_signal = row[constants.NSE_SIGNAL_INDEX]
+        bse_signal = row[constants.BSE_SIGNAL_INDEX]
         if((nse_signal == "SUPER BUY" or nse_signal == "SUPER SELL")
            or (nse_signal == "BUY" and bse_signal == "BUY")
            or (nse_signal == "SELL" and bse_signal == "SELL")):
@@ -58,14 +60,14 @@ def sheets_get_script_data(client,olh_list):
     '''
 
     # Open WorkBook
-    workbook = client.open(INTRA_GOOGLE_SHEET_NAME)
+    workbook = client.open(constants.INTRA_GOOGLE_SHEET_NAME)
     # Open WorkSheet
     sheet = workbook.worksheet('DATA')
     # Read Complete Sheet Data
     sheet_data = sheet.get_all_values()
-    for row in sheet_data[DATA_SKIP_ROWS:]:
-        if row[START] in olh_list:
-            exchange=olh_list[row[START]]
+    for row in sheet_data[constants.DATA_SKIP_ROWS:]:
+        if row[constants.START] in olh_list:
+            exchange=olh_list[row[constants.START]]
             if exchange == 'NSE':
                 open = row[2]
 
@@ -77,27 +79,31 @@ def sheets_get_olh_data(client):
 
     '''
     # Open WorkBook
-    workbook = client.open(INTRA_GOOGLE_SHEET_NAME)
+    workbook = client.open(constants.INTRA_GOOGLE_SHEET_NAME)
     # Open WorkSheet
     sheet = workbook.worksheet('INTRA_DATA')
     # Read Complete Sheet Data
     sheet_data = sheet.get_all_values()
     olh_data = []
-    for row in sheet_data[DATA_SKIP_ROWS:]:
-        script_name = row[START]
+    trade_time = time.strftime(constants.TIME_FORMAT)
+
+    for row in sheet_data[constants.DATA_SKIP_ROWS:]:
+        script_name = row[constants.START]
         # Read Nse Data
-        nse_open = row[NSE_OPEN_INDEX]
-        nse_high = row[NSE_HIGH_INDEX]
-        nse_low = row[NSE_LOW_INDEX]
-        nse_pclose = row[NSE_PCLOSE_INDEX]
-        nse_ltp = row[NSE_LTP_INDEX]
+        nse_open = row[constants.NSE_OPEN_INDEX]
+        nse_high = row[constants.NSE_HIGH_INDEX]
+        nse_low = row[constants.NSE_LOW_INDEX]
+        nse_pclose = row[constants.NSE_PCLOSE_INDEX]
+        nse_ltp = row[constants.NSE_LTP_INDEX]
+        nse_volume = row[constants.NSE_VOLUME_INDEX]
         #print(script_name,"-",nse_open,nse_high,nse_low,nse_pclose)
         # Read Bse Data
-        bse_open = row[BSE_OPEN_INDEX]
-        bse_high = row[BSE_HIGH_INDEX]
-        bse_low = row[BSE_LOW_INDEX]
-        bse_pclose = row[BSE_PCLOSE_INDEX]
-        bse_ltp = row[BSE_LTP_INDEX]
+        bse_open = row[constants.BSE_OPEN_INDEX]
+        bse_high = row[constants.BSE_HIGH_INDEX]
+        bse_low = row[constants.BSE_LOW_INDEX]
+        bse_pclose = row[constants.BSE_PCLOSE_INDEX]
+        bse_ltp = row[constants.BSE_LTP_INDEX]
+        bse_volume = row[constants.BSE_VOLUME_INDEX]
         # Define all conditions as False initially.
         nse_super_buy=False
         nse_super_sell = False
@@ -186,7 +192,7 @@ def sheets_get_olh_data(client):
             pclose = nse_pclose
 
         if oh :
-            IntraData = OLH.OLHSheetsClass(script_name,p_open, high, low, ltp, pclose, cond)
+            IntraData = OLH.OLHSheetsClass(script_name,trade_time,p_open, high, low, ltp, nse_volume, pclose, cond)
             olh_data.append(IntraData)
 
         if nse_super_buy & bse_super_buy :
@@ -223,7 +229,7 @@ def sheets_get_olh_data(client):
             pclose = nse_pclose
 
         if ol :
-            IntraData = OLH.OLHSheetsClass(script_name,p_open, high, low, ltp, pclose, cond)
+            IntraData = OLH.OLHSheetsClass(script_name,trade_time,p_open, high, low, ltp, nse_volume, pclose, cond)
             olh_data.append(IntraData)
     return olh_data
 

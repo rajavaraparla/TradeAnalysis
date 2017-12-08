@@ -38,9 +38,11 @@ if __name__ == "__main__":
     # Load table 'intra_olh_trade' with olh_trade_data
     for olh_trade_class in OLH_TRADES:
         PARAMS = {}
-        PARAMS['ticker'] = olh_trade_class.script
-        PARAMS['ticker'] = olh_trade_class.script
-        print (str(olh_trade_class))
+        PARAMS['script'] = olh_trade_class.script
+        PARAMS['trade_time'] = olh_trade_class.script
+        PARAMS['trade_time'] = olh_trade_class.script
+
+        #print (str(olh_trade_class))
         pass
 
     #print("\n".join(str(x) for x in OLH_TRADES))
