@@ -130,11 +130,11 @@ def generate_pdf_olh_intra(olh_trade_class_list, pdf_file_name):
 
             reg_exp = re.compile(constants.NSE_STRING + "-(.*?),")
             nse_signal = reg_exp.search(olh_trade_class.trade_str)
-            print("NSE_SIGNAL", nse_signal.groups()[0])
+            #print("NSE_SIGNAL", nse_signal.groups()[0])
 
             reg_exp = re.compile(constants.BSE_STRING + "-(.*?)_")
             bse_signal = reg_exp.search(olh_trade_class.trade_str)
-            print("BSE_SIGNAL", bse_signal.groups()[0])
+            #print("BSE_SIGNAL", bse_signal.groups()[0])
             ol_string = ol_string.replace('#NSE_SIGNAL#', nse_signal.groups()[0])
             ol_string = ol_string.replace('#BSE_SIGNAL#', bse_signal.groups()[0])
             pdf_string = ol_string
