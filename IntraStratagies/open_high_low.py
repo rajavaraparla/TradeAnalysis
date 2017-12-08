@@ -7,7 +7,7 @@ import math
 import sys
 import json # JSON related
 import gspread # Google Spread Sheets
-
+import time
 from oauth2client.client import SignedJwtAssertionCredentials # Authention related
 
 from Classes import OLHSheetsClass as olh
@@ -30,6 +30,7 @@ def sheets_get_olh_data(client):
     # Read Complete Sheet Data
     sheet_data = sheet.get_all_values()
     olh_data = []
+    trade_time = time.strftime(constants.TIME_FORMAT)
     for row in sheet_data[constants.DATA_SKIP_ROWS:]:
         script_name = row[constants.START]
         # Read Nse Data
@@ -38,6 +39,7 @@ def sheets_get_olh_data(client):
         nse_low = row[constants.NSE_LOW_INDEX]
         nse_pclose = row[constants.NSE_PCLOSE_INDEX]
         nse_ltp = row[constants.NSE_LTP_INDEX]
+        nse_volume = row[constants.NSE_VOLUME_INDEX]
         #print(script_name,"-",nse_open,nse_high,nse_low,nse_pclose)
         # Read Bse Data
         bse_open = row[constants.BSE_OPEN_INDEX]
@@ -45,6 +47,7 @@ def sheets_get_olh_data(client):
         bse_low = row[constants.BSE_LOW_INDEX]
         bse_pclose = row[constants.BSE_PCLOSE_INDEX]
         bse_ltp = row[constants.BSE_LTP_INDEX]
+        bse_volume = row[constants.BSE_VOLUME_INDEX]
         # Define all conditions as False initially.
         nse_super_buy = False
         nse_super_sell = False
@@ -55,7 +58,7 @@ def sheets_get_olh_data(client):
         bse_super_sell = False
         bse_sell = False
         bse_buy = False
-
+        trade_time = time.strftime(constants.TIME_FORMAT)
 
         # Check NSE OPEN = NSE HIGH = NSE PREVCLOSE
         if nse_open == nse_high == nse_pclose:
@@ -133,9 +136,9 @@ def sheets_get_olh_data(client):
             pclose = nse_pclose
 
         if open_high:
-            intra_data = olh.OLHSheetsClass(script_name, float(p_open)
+            intra_data = olh.OLHSheetsClass(script_name, trade_time, float(p_open)
                                             , float(high), float(low)
-                                            , float(ltp), float(pclose), cond)
+                                            , float(ltp), nse_volume, float(pclose), cond)
             olh_data.append(intra_data)
 
         if nse_super_buy & bse_super_buy:
@@ -172,9 +175,9 @@ def sheets_get_olh_data(client):
             pclose = nse_pclose
 
         if open_low:
-            intra_data = olh.OLHSheetsClass(script_name, float(p_open)
+            intra_data = olh.OLHSheetsClass(script_name, trade_time, float(p_open)
                                             , float(high), float(low)
-                                            , float(ltp), float(pclose), cond)
+                                            , float(ltp), nse_volume, float(pclose), cond)
             olh_data.append(intra_data)
     return olh_data
 
@@ -196,6 +199,7 @@ def sheets_generate_olh_trade_data(intra_stocks_list):
         cond = olh_script.cond
         atp = (high_price + low_price) / 2
         pivot = (prev_close + open_price + atp) / 3
+        trade_time = time.strftime(constants.TIME_FORMAT)
         if olh_script.cond.find(constants.BUY_STRING) != constants.STR_NOT_FOUND_VALUE:
             trade_string = cond+"_BUY ABOVE"
             gann_values = trade_utils.generate_gann_square(open_price)
@@ -226,7 +230,7 @@ def sheets_generate_olh_trade_data(intra_stocks_list):
             target4 = gann_targets_list[4]
             # EXTENDED target5
             target5 = gann_targets_list[5]
-            olh_trade_class = olht.OLHTradeClass(script,open_price, high_price,low_price,cmp, prev_close
+            olh_trade_class = olht.OLHTradeClass(script, trade_time, open_price, high_price,low_price,cmp, prev_close
                                                  , pivot, atp, trade_string
                                                  , buysl, entry1, entry2, entry3
                                                  , target1, target2, target3
@@ -263,7 +267,7 @@ def sheets_generate_olh_trade_data(intra_stocks_list):
             target4 = gann_targets_list[4]
             # EXTENDED target5
             target5 = gann_targets_list[5]
-            olh_trade_class = olht.OLHTradeClass(script, open_price, high_price, low_price, cmp, prev_close, pivot, atp
+            olh_trade_class = olht.OLHTradeClass(script, trade_time, open_price, high_price, low_price, cmp, prev_close, pivot, atp
                                                  , trade_string, sellsl, entry1
                                                  , entry2, entry3, target1, target2
                                                  , target3, target4, target5)
