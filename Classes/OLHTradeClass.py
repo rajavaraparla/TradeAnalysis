@@ -2,19 +2,26 @@
     This is the template for the Intra Class
 
 '''
+from Classes.OLHBasicClass import OLHBasicClass
 
-class OLHTradeClass: # pylint: disable=too-few-public-methods , too-many-arguments
+
+class OLHTradeClass(OLHBasicClass): # pylint: disable=too-few-public-methods , too-many-arguments
     '''
         OLHTradeClass
 
     '''
 
-    def __init__(self,script, p_open,high,low,ltp, pclose, ipivot, atp, trade_str
+    def __init__(self,script, trade_time, p_open, high,low,ltp, pclose, ipivot, atp, trade_str
                  , sl, entry1, entry2, entry3, target1, target2
                  , target3, target4, target5):
         '''
         constructor for Trade class
         :param script:
+        :param trade_time:
+        :param p_open:
+        :param high:
+        :param low:
+        :param ltp:
         :param pclose:
         :param ipivot:
         :param atp:
@@ -29,12 +36,7 @@ class OLHTradeClass: # pylint: disable=too-few-public-methods , too-many-argumen
         :param target4:
         :param target5:
         '''
-        self.script = script
-        self.p_open = p_open
-        self.high = high
-        self.low = low
-        self.ltp = ltp
-        self.pclose = pclose
+        OLHBasicClass.__init__(self, script, trade_time, p_open, high, low, ltp, None, pclose)
         self.ipivot = ipivot
         self.atp = atp
         self.trade_str = trade_str
