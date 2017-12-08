@@ -2,19 +2,18 @@
     This will hold the information from Google Sheets Intra data
 
 """
-class OLHSheetsClass: # pylint: disable=too-few-public-methods , too-many-arguments
+from Classes.OLHBasicClass import OLHBasicClass
+
+
+class OLHSheetsClass(OLHBasicClass): # pylint: disable=too-few-public-methods , too-many-arguments
     """
         OLHSheetsClass
 
     """
-    def __init__(self, script, p_open, high, low, ltp, prev_close, cond):
-        self.script = script
-        self.p_open = p_open
-        self.high = high
-        self.low = low
-        self.ltp = ltp
-        self.pclose = prev_close
+    def __init__(self, script, trade_time, p_open, high, low, ltp,volume, prev_close, cond):
+        OLHBasicClass.__init__(self, script, trade_time, p_open,high ,low, ltp, volume, prev_close)
         self.cond = cond
+
 
     def __str__(self):
         ''' String representation of OLHSheetsClass '''
