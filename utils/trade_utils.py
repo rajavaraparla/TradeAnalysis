@@ -4,12 +4,17 @@
 import math
 import os
 import re
-from conf import constants
 import fpdf
 import csv
-import datetime
 import pandas as pd
 import requests
+import datetime
+import time
+from conf import constants
+from nsepy import get_history
+
+import pymysql
+from sqlalchemy import create_engine, MetaData, TEXT, Integer, Float, Table, Column, ForeignKey, String, BIGINT, DATE, DATETIME
 
 
 from Templates import open_high_low_templ
@@ -22,7 +27,8 @@ def generate_gann_square(price):
                    for gann_quot in constants.GANN_QUOTIENTS]
     return gann_square
 
-def generate_pdf_olh_intra(olh_trade_class_list,pdf_file_name):
+
+def generate_pdf_olh_intra(olh_trade_class_list, pdf_file_name):
     '''
     This will create pdf file
     :param olh_trade_class_list:
@@ -78,11 +84,11 @@ def generate_pdf_olh_intra(olh_trade_class_list,pdf_file_name):
 
             reg_exp = re.compile(constants.NSE_STRING+"-(.*?),")
             nse_signal = reg_exp.search(olh_trade_class.trade_str)
-            print ("NSE_SIGNAL",nse_signal.groups()[0])
+            #print ("NSE_SIGNAL",nse_signal.groups()[0])
 
             reg_exp = re.compile(constants.BSE_STRING + "-(.*?)_")
             bse_signal = reg_exp.search(olh_trade_class.trade_str)
-            print ("BSE_SIGNAL",bse_signal.groups()[0])
+            #print ("BSE_SIGNAL",bse_signal.groups()[0])
             oh_string = oh_string.replace('#NSE_SIGNAL#', nse_signal.groups()[0])
             oh_string = oh_string.replace('#BSE_SIGNAL#', bse_signal.groups()[0])
             pdf_string = oh_string
@@ -168,6 +174,44 @@ def generate_excel_olh_intra(olh_trade_class_list,xls_file_name):
 
     workbook.close()
 
+def get_intra_5min_data(ticker,days=1):
+    '''
+    extract data in 15 min candles
+    :param ticker:
+    :param days:
+    :return: a data frame of 15 min data.
+    '''
+    return get_google_finance_intraday(ticker, period=300, days=days)
+
+
+def get_intra_15min_data(ticker,days=1):
+    '''
+    extract data in 15 min candles
+    :param ticker:
+    :param days:
+    :return: a data frame of 15 min data.
+    '''
+    return get_google_finance_intraday(ticker, period=900, days=days)
+
+def get_intra_30min_data(ticker, days=1):
+    '''
+    extract data in 30 min candles
+    :param ticker:
+    :param days:
+    :return: a data frame of 15 min data.
+    '''
+
+    return get_google_finance_intraday(ticker, period=1800, days=days)
+
+def get_intra_hour_data(ticker, days=1):
+    '''
+    extract data in 60 min candles
+    :param ticker:
+    :param days:
+    :return: a data frame of 15 min data.
+    '''
+    return get_google_finance_intraday(ticker, period=3600, days=days)
+
 
 def get_google_finance_intraday(ticker, period=60, days=1,exchange="NSE"):
     """
@@ -195,13 +239,12 @@ def get_google_finance_intraday(ticker, period=60, days=1,exchange="NSE"):
     # print (response.text)
     #
     reader = csv.reader((response.content.decode("utf-8")).splitlines())
-    print(type(reader))
+    #print(type(reader))
     rows = []
     columns = ['Close', 'High', 'Low', 'Open', 'Volume']
     times = []
     # Skip first 7 rows as it contains header info
     for row in reader:
-        print (row)
         if re.match('^[a\d]', row[0]):
             if row[0].startswith('a'):
                 start = datetime.datetime.fromtimestamp(int(row[0][1:]))
@@ -209,10 +252,63 @@ def get_google_finance_intraday(ticker, period=60, days=1,exchange="NSE"):
             else:
                 times.append(start+datetime.timedelta(seconds=period*int(row[0])))
             rows.append(map(float, row[1:]))
+
     if len(rows):
-        return pd.DataFrame(rows, index=pd.DatetimeIndex(times, name='Date'),
-                            columns=columns)
+        df = pd.DataFrame(rows, index=pd.DatetimeIndex(times, name='TTime'), columns=columns)
+        df['TradeTime'] = df.index
+        df['ticker'] = ticker
+        df['TradeDate'] = df['TradeTime'].dt.date
+        return df
     else:
-        return pd.DataFrame(rows, index=pd.DatetimeIndex(times, name='Date'))
+        df = pd.DataFrame(rows, index=pd.DatetimeIndex(times, name='TTime'), columns=columns)
+        df['TradeTime'] = df.index
+        df['ticker'] = ticker
+        df['TradeDate'] = df['TradeTime'].dt.date
+        return df
 
 
+
+def get_nse_eoddata(ticker, start_date=datetime.date.today(), end_date=datetime.timedelta(1)):
+    """
+    Retrieve  EOD stock data from NSE.
+    Parameters
+    ----------
+    ticker : str
+        Company ticker symbol.
+    start_date: date object
+        Start Date
+    end_date : date object
+        End Date.
+    Returns
+    -------
+    df : pandas.DataFrame
+        DataFrame containing :
+            Ticekr,
+            TradeDate,
+            Open,
+            High,
+            Low,
+            Close,
+            VWAP,
+            Volume,
+            Deliverable Volume,
+            Percentage Deliverables
+    """
+
+    df = get_history(symbol=ticker, start=start_date, end=end_date)
+
+    df = df.drop('Prev Close', 1)
+    df = df.drop('Last', 1)
+    df = df.drop('Series', 1)
+    df = df.drop('Turnover', 1)
+    df = df.drop('Trades', 1)
+
+
+    df['TradeDate'] = pd.to_datetime(df.index, errors='coerce')
+
+    #df['TradeDate'] = (df.index).dt.date
+    df = df.rename(columns={'Symbol': 'ticker', '%Deliverble': 'Percentage_Deliverables','Deliverable Volume':'Deliverable_Volume'})
+    df = df.set_index('TradeDate', 'ticker')
+    df['TradeDate'] = df.index
+    print(df.head())
+    return df
