@@ -1,8 +1,10 @@
-'''
+"""
     This is the basic class OLH Class.
     All the further classes will be inherited from this.
 
-'''
+"""
+
+
 class OLHBasicClass:
 
     def __init__(self,script, trade_time, p_open, high, low, ltp, volume, pclose=None):
@@ -14,7 +16,6 @@ class OLHBasicClass:
         self.ltp = ltp
         self.volume = volume
         self.pclose = pclose
-
 
     def __repr__(self):
         ''' Representation of OLHBasicClass '''
@@ -30,4 +31,3 @@ class OLHBasicClass:
         return olh_str
 
 
-    pass

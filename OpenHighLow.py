@@ -39,7 +39,7 @@ if __name__ == "__main__":
     for olh_trade_class in OLH_TRADES:
         PARAMS = {}
         PARAMS['script'] = olh_trade_class.script
-        PARAMS['trade_time'] = olh_trade_class.script
+
         PARAMS['trade_time'] = olh_trade_class.script
 
         #print (str(olh_trade_class))
