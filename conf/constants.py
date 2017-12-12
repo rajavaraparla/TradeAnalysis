@@ -5,6 +5,8 @@ Constants used in all modules
 # Constants for Intra day for google sheets.
 # START COLUMN FOR READING OLH DATA
 
+import os
+
 START = 0
 INTRA_OLH_END_INDEX = 12
 NSE_SIGNAL_INDEX = 10
@@ -80,6 +82,8 @@ ALL_SYMBOLS = ['ACC', 'ADANIENT', 'ADANIPORTS', 'ADANIPOWER', 'ABIRLANUVO', 'AJA
               'MCDOWELL-N', 'UPL', 'VEDL', 'VOLTAS', 'WIPRO', 'WOCKPHARMA', 'YESBANK', 'ZEEL']
 
 
+
+
 PERCENT_ONE = 1
 PERCENT_TWO = 2
 PERCENT_THREE = 3
@@ -89,3 +93,7 @@ PERCENT_SIX = 6
 PERCENT_SEVEN = 7
 
 TIME_FORMAT = "%Y-%m-%d %H:%M:00"
+FILE_TIME_FORMAT = "%Y-%m-%d_%H_%M_00"
+FILE_PDF_EXTENSION = ".pdf"
+
+FILES_LOCATION  = "Files"

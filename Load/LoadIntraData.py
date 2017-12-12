@@ -14,7 +14,7 @@ if __name__ == "__main__":
     #print(trade_utils.get_google_finance_intraday("CIPLA",period=300,days=1))
     # Get last 90 days data.
     SYMBOLS = constants.ALL_SYMBOLS
-    NUM_DAYS = 1
+    NUM_DAYS = 2
 
     for index,ticker in enumerate(SYMBOLS):
         DF_5MIN = trade_utils.get_intra_5min_data(ticker=ticker, days=NUM_DAYS)
