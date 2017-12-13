@@ -97,3 +97,5 @@ FILE_TIME_FORMAT = "%Y-%m-%d_%H_%M_00"
 FILE_PDF_EXTENSION = ".pdf"
 
 FILES_LOCATION  = "Files"
+MAIL_TO = ['varaparla.raja@gmail.com', 'tradeuser2018@gmail.com', 'kmasani81@gmail.com']
+

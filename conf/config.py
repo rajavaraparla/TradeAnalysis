@@ -12,3 +12,6 @@ DB_INTRA_30MIN_TABLE = "intra_data_30min"
 DB_INTRA_HOUR_TABLE = "intra_data_hour"
 
 DB_EOD_TABLE = 'hist_data'
+
+MAIL_USERNAME_FROM = "tradeuser2018@gmail.com"
+MAIL_PASSWORD_FROM = "Progress!2009"

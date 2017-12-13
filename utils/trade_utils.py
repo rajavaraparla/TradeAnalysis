@@ -9,8 +9,15 @@ import csv
 import pandas as pd
 import requests
 import datetime
+# SMTP Library used for SendMail
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+
+
 import time
-from conf import constants
+from conf import constants, config
 from nsepy import get_history
 
 import pymysql
@@ -50,7 +57,7 @@ def generate_pdf_olh_intra(olh_trade_class_list, pdf_file_name):
             oh_string = open_high_low_templ.OH_STRING
             oh_string = str(index+1)+" . "+oh_string
             pdf_fh.set_text_color(255,0,0)
-            print(oh_string)
+            #print(oh_string)
             oh_string = oh_string.replace('#SCRIPT#', str(olh_trade_class.script))
             oh_string = oh_string.replace('#CMP#', str(olh_trade_class.ltp))
 
@@ -310,5 +317,38 @@ def get_nse_eoddata(ticker, start_date=datetime.date.today(), end_date=datetime.
     df = df.rename(columns={'Symbol': 'ticker', '%Deliverble': 'Percentage_Deliverables','Deliverable Volume':'Deliverable_Volume'})
     df = df.set_index('TradeDate', 'ticker')
     df['TradeDate'] = df.index
-    print(df.head())
+    #print(df.head())
     return df
+
+
+def sendMail(fileName):
+    '''
+        Send email
+    :param recipent_list:
+    :param fileName:
+    :return:
+    '''
+    recipients = constants.MAIL_TO
+    emaillist = [elem.strip().split(',') for elem in recipients]
+    msg = MIMEMultipart()
+    subject = "OLH for "+time.strftime(constants.TIME_FORMAT)
+    msg['Subject'] = subject
+    msg['From'] = config.MAIL_USERNAME_FROM
+    msg.preamble = 'Multipart massage.\n'
+
+    part = MIMEText("Hi, please find the attached file")
+    msg.attach(part)
+
+    part = MIMEApplication(open(fileName, "rb").read())
+    part.add_header('Content-Disposition', 'attachment', filename=fileName)
+    msg.attach(part)
+
+    server = smtplib.SMTP("smtp.gmail.com",587)
+
+    server.ehlo()
+    server.starttls()
+    server.login(config.MAIL_USERNAME_FROM, config.MAIL_PASSWORD_FROM)
+
+    server.sendmail(msg['From'], emaillist, msg.as_string())
+    server.close()
+    pass

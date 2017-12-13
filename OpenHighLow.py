@@ -39,6 +39,7 @@ if __name__ == "__main__":
 
     FILE_NAME = constants.FILES_LOCATION+os.sep+time.strftime(constants.FILE_TIME_FORMAT)+constants.FILE_PDF_EXTENSION
     trade_utils.generate_pdf_olh_intra(OLH_TRADES,FILE_NAME)
+    trade_utils.sendMail(FILE_NAME)
     # Load table 'intra_olh_trade' with olh_trade_data
     for olh_trade_class in OLH_TRADES:
         PARAMS = {}
