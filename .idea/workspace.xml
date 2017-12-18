@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="42929506-72d1-447c-bb82-74bceaab0f4c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Load/LoadHistoryDB.py" afterPath="$PROJECT_DIR$/Load/LoadHistoryDB.py" />
-      <change beforePath="$PROJECT_DIR$/OpenHighLow.py" afterPath="$PROJECT_DIR$/OpenHighLow.py" />
-      <change beforePath="$PROJECT_DIR$/conf/config.py" afterPath="$PROJECT_DIR$/conf/config.py" />
-      <change beforePath="$PROJECT_DIR$/conf/constants.py" afterPath="$PROJECT_DIR$/conf/constants.py" />
-      <change beforePath="$PROJECT_DIR$/conf/setup.sql" afterPath="$PROJECT_DIR$/conf/setup.sql" />
       <change beforePath="$PROJECT_DIR$/utils/trade_utils.py" afterPath="$PROJECT_DIR$/utils/trade_utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="trade_utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="trade_utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/trade_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="356" column="29" lean-forward="false" selection-start-line="356" selection-start-column="4" selection-end-line="356" selection-end-column="29" />
+            <state relative-caret-position="258">
+              <caret line="418" column="101" lean-forward="false" selection-start-line="418" selection-start-column="101" selection-end-line="418" selection-end-column="101" />
               <folding>
                 <element signature="e#80#91#0" expanded="true" />
               </folding>
@@ -75,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenHighLow.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OpenHighLow.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenHighLow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="47" column="91" lean-forward="false" selection-start-line="47" selection-start-column="91" selection-end-line="47" selection-end-column="91" />
+            <state relative-caret-position="258">
+              <caret line="47" column="91" lean-forward="false" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="91" />
               <folding>
                 <element signature="e#125#147#0" expanded="true" />
               </folding>
@@ -210,10 +205,10 @@
         <option value="$PROJECT_DIR$/Load/LoadHistoryDB.py" />
         <option value="$PROJECT_DIR$/conf/setup.sql" />
         <option value="$PROJECT_DIR$/utils/db_utils.py" />
-        <option value="$PROJECT_DIR$/utils/trade_utils.py" />
         <option value="$PROJECT_DIR$/conf/constants.py" />
         <option value="$PROJECT_DIR$/conf/config.py" />
         <option value="$PROJECT_DIR$/OpenHighLow.py" />
+        <option value="$PROJECT_DIR$/utils/trade_utils.py" />
       </list>
     </option>
   </component>
@@ -589,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513164922343</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Inserting OLH Data into table">
+      <created>1513620278115</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1513620278115</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -602,7 +604,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45052633" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25863874" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -625,7 +627,8 @@
     <MESSAGE value="Separated Base and Derived Classes" />
     <MESSAGE value="Commit on 08-12-2017" />
     <MESSAGE value="Added Email Functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Email Functionality" />
+    <MESSAGE value="Inserting OLH Data into table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inserting OLH Data into table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -939,16 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/trade_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="356" column="29" lean-forward="false" selection-start-line="356" selection-start-column="4" selection-end-line="356" selection-end-column="29" />
-          <folding>
-            <element signature="e#80#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/OLHTradeClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="778">
@@ -975,10 +968,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OpenHighLow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="47" column="91" lean-forward="false" selection-start-line="47" selection-start-column="91" selection-end-line="47" selection-end-column="91" />
+        <state relative-caret-position="258">
+          <caret line="47" column="91" lean-forward="false" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="91" />
           <folding>
             <element signature="e#125#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/trade_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="418" column="101" lean-forward="false" selection-start-line="418" selection-start-column="101" selection-end-line="418" selection-end-column="101" />
+          <folding>
+            <element signature="e#80#91#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -416,7 +416,7 @@ def insert_olh_intra_trade_db(olh_trade_class_list, tablename, dbname, dbhost, d
         params_dict[constants.INTRA_OLH_TRADE_TRADE_DATE] = tradedate
         params_dict[constants.INTRA_OLH_TRADE_TRADE_TIME] = tradetime
 
-        insert_status = db_utils.execute_insert_query(tablename = constants.INTRA_OLH_TRADE_TABLENAME
+        insert_status = db_utils.execute_insert_query(tablename = config.DB_INTRA_OLH_TRADE_TABLENAME
                                                       , dbname = dbname
                                                       , dbhost = dbhost
                                                       , dbpassword = dbpassword
