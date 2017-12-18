@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS intra_olh_trade (
   Close float DEFAULT NULL,
   PClose float DEFAULT NULL,
   Atp  float DEFAULT NULL,
-  ipivot float DEFAULT NULL,
+  Ipivot float DEFAULT NULL,
   NSE_Trade varchar(255) ,
   BSE_Trade varchar(255) ,
   Entry1 float DEFAULT NULL,
@@ -99,4 +99,6 @@ CREATE TABLE IF NOT EXISTS intra_olh_trade (
   Target4 float DEFAULT NULL,
   Target5 float DEFAULT NULL,
 PRIMARY KEY (ticker,TradeTime)
-)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+

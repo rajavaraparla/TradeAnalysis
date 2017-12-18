@@ -11,13 +11,13 @@ from oauth2client.client import SignedJwtAssertionCredentials # Authention relat
 
 from IntraStratagies import open_high_low as olh
 from utils import trade_utils
-from conf import constants
+from conf import constants, config
 import time
 
 # Get the base project Dir
 BASEDIR = os.path.dirname(os.getcwd())
 #CONFDIR = BASEDIR+os.sep+"conf"
-CONFDIR = os.getcwd()+os.sep+"conf"
+CONFDIR = "conf"
 # Credential file
 CREDENTIALS_FILE = CONFDIR+os.sep+"creds.json"
 
@@ -40,6 +40,12 @@ if __name__ == "__main__":
     FILE_NAME = constants.FILES_LOCATION+os.sep+time.strftime(constants.FILE_TIME_FORMAT)+constants.FILE_PDF_EXTENSION
     trade_utils.generate_pdf_olh_intra(OLH_TRADES,FILE_NAME)
     trade_utils.sendMail(FILE_NAME)
+    trade_utils.insert_olh_intra_trade_db(olh_trade_class_list = OLH_TRADES
+                                          ,dbhost = config.DB_HOST
+                                          , dbname = config.DB_NAME
+                                          , dbpassword = config.DB_PASSWORD
+                                          , dbuser = config.DB_USER
+                                          , tablename = config.DB_INTRA_OLH_TRADE_TABLENAME)
     # Load table 'intra_olh_trade' with olh_trade_data
     for olh_trade_class in OLH_TRADES:
         PARAMS = {}

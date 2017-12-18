@@ -10,7 +10,7 @@ from datetime import datetime,date,timedelta
 
 import pymysql
 from sqlalchemy import create_engine, MetaData, TEXT, Integer, Float, Table, Column, ForeignKey, String, BIGINT, DATE
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from conf import constants, config
 from utils import trade_utils, db_utils
 
@@ -19,7 +19,7 @@ from utils import trade_utils, db_utils
 
 if __name__ == '__main__':
     ALL_SYMBOLS = constants.ALL_SYMBOLS
-    TIME_DELTA = 1
+    TIME_DELTA = 0
     START_DATE = date.today() - timedelta(TIME_DELTA)
     END_DATE = date.today()
     for symbol in ALL_SYMBOLS:

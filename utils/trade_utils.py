@@ -19,7 +19,7 @@ from email.mime.multipart import MIMEMultipart
 import time
 from conf import constants, config
 from nsepy import get_history
-
+from utils import db_utils
 import pymysql
 from sqlalchemy import create_engine, MetaData, TEXT, Integer, Float, Table, Column, ForeignKey, String, BIGINT, DATE, DATETIME
 
@@ -352,3 +352,80 @@ def sendMail(fileName):
     server.sendmail(msg['From'], emaillist, msg.as_string())
     server.close()
     pass
+
+
+def insert_olh_intra_trade_db(olh_trade_class_list, tablename, dbname, dbhost, dbuser, dbpassword):
+    '''
+    This will load the intra trade database with the qualified trades for the day
+    :param olh_trade_class_list:
+    :param tablename:
+    :param dbname:
+    :param dbhost:
+    :param dbuser:
+    :param dbpassword:
+    :return SUCCESS/FAILURE:
+    '''
+    for index,olh_trade_class in enumerate(olh_trade_class_list):
+        script = olh_trade_class.script
+        cmp = olh_trade_class.ltp
+        atp = olh_trade_class.atp
+        ipivot = olh_trade_class.ipivot
+        pclose = olh_trade_class.pclose
+        sl = olh_trade_class.sl
+        entry1 = olh_trade_class.entry1
+        entry2 = olh_trade_class.entry2
+        entry3 = olh_trade_class.entry3
+        target1 = olh_trade_class.target1
+        target2 = olh_trade_class.target2
+        target3 = olh_trade_class.target3
+        target4 = olh_trade_class.target4
+        target5 = olh_trade_class.target5
+        high = olh_trade_class.high
+        low = olh_trade_class.low
+        open = None
+        if olh_trade_class.trade_str.find(constants.SELL_STRING) != constants.STR_NOT_FOUND_VALUE:
+            open = olh_trade_class.high
+        elif olh_trade_class.trade_str.find(constants.BUY_STRING) != constants.STR_NOT_FOUND_VALUE :
+            open = olh_trade_class.low
+        tradedate = datetime.date.today().strftime(constants.DATE_FORMAT)
+        tradetime = time.strftime(constants.TIME_FORMAT)
+        reg_exp = re.compile(constants.NSE_STRING + "-(.*?),")
+        nsesignal = reg_exp.search(olh_trade_class.trade_str)
+        reg_exp = re.compile(constants.BSE_STRING + "-(.*?)_")
+        bsesignal = reg_exp.search(olh_trade_class.trade_str)
+        params_dict = {}
+        params_dict[constants.INTRA_OLH_TRADE_TICKER] = script
+        params_dict[constants.INTRA_OLH_TRADE_CLOSE] = cmp
+        params_dict[constants.INTRA_OLH_TRADE_PCLOSE] = pclose
+        params_dict[constants.INTRA_OLH_TRADE_OPEN] = open
+        params_dict[constants.INTRA_OLH_TRADE_HIGH] = high
+        params_dict[constants.INTRA_OLH_TRADE_LOW] = low
+        params_dict[constants.INTRA_OLH_TRADE_IPIVOT] = ipivot
+        params_dict[constants.INTRA_OLH_TRADE_ATP] = atp
+        params_dict[constants.INTRA_OLH_TRADE_NSE_TRADE] = nsesignal
+        params_dict[constants.INTRA_OLH_TRADE_BSE_TRADE] = bsesignal
+        params_dict[constants.INTRA_OLH_TRADE_ENTRY1] = entry1
+        params_dict[constants.INTRA_OLH_TRADE_ENTRY2] = entry2
+        params_dict[constants.INTRA_OLH_TRADE_ENTRY3] = entry3
+        params_dict[constants.INTRA_OLH_TRADE_SL] = sl
+        params_dict[constants.INTRA_OLH_TRADE_TARGET1] = target1
+        params_dict[constants.INTRA_OLH_TRADE_TARGET2] = target2
+        params_dict[constants.INTRA_OLH_TRADE_TARGET3] = target3
+        params_dict[constants.INTRA_OLH_TRADE_TARGET4] = target4
+        params_dict[constants.INTRA_OLH_TRADE_TARGET5] = target5
+        params_dict[constants.INTRA_OLH_TRADE_TRADE_DATE] = tradedate
+        params_dict[constants.INTRA_OLH_TRADE_TRADE_TIME] = tradetime
+
+        insert_status = db_utils.execute_insert_query(tablename = constants.INTRA_OLH_TRADE_TABLENAME
+                                                      , dbname = dbname
+                                                      , dbhost = dbhost
+                                                      , dbpassword = dbpassword
+                                                      , dbuser = dbuser
+                                                      , params = params_dict)
+        return insert_status
+
+
+
+
+
+

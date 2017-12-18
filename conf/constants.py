@@ -95,7 +95,43 @@ PERCENT_SEVEN = 7
 TIME_FORMAT = "%Y-%m-%d %H:%M:00"
 FILE_TIME_FORMAT = "%Y-%m-%d_%H_%M_00"
 FILE_PDF_EXTENSION = ".pdf"
+DATE_FORMAT = "%Y-%m-%d"
 
 FILES_LOCATION  = "Files"
-MAIL_TO = ['varaparla.raja@gmail.com', 'tradeuser2018@gmail.com', 'kmasani81@gmail.com']
+#MAIL_TO = ['varaparla.raja@gmail.com', 'tradeuser2018@gmail.com', 'kmasani81@gmail.com']
+MAIL_TO = ['varaparla.raja@gmail.com', 'tradeuser2018@gmail.com']
+
+
+# intra_olh_trade column Names.
+
+
+INTRA_OLH_TRADE_TICKER = "ticker"
+INTRA_OLH_TRADE_TRADE_DATE = "TradeDate"
+INTRA_OLH_TRADE_TRADE_TIME = "TradeTime"
+INTRA_OLH_TRADE_OPEN = "Open"
+INTRA_OLH_TRADE_HIGH = "High"
+INTRA_OLH_TRADE_LOW = "Low"
+INTRA_OLH_TRADE_CLOSE = "Close"
+INTRA_OLH_TRADE_PCLOSE = "PClose"
+INTRA_OLH_TRADE_ATP = "Atp"
+INTRA_OLH_TRADE_IPIVOT = "Ipivot"
+INTRA_OLH_TRADE_NSE_TRADE = "NSE_Trade"
+INTRA_OLH_TRADE_BSE_TRADE = "BSE_Trade"
+INTRA_OLH_TRADE_ENTRY1 = "Entry1"
+INTRA_OLH_TRADE_ENTRY2 = "Entry2"
+INTRA_OLH_TRADE_ENTRY3 = "Entry3"
+INTRA_OLH_TRADE_SL = "SL"
+INTRA_OLH_TRADE_TARGET1 = "Target1"
+INTRA_OLH_TRADE_TARGET2 = "Target2"
+INTRA_OLH_TRADE_TARGET3 = "Target3"
+INTRA_OLH_TRADE_TARGET4 = "Target4"
+INTRA_OLH_TRADE_TARGET5 = "Target5"
+
+
+
+
+
+
+
+
 
