@@ -4,7 +4,8 @@
 '''
 
 import pymysql
-from sqlalchemy import create_engine, MetaData, TEXT, Integer, Float, Table, Column, ForeignKey, String, BIGINT, DATE, DATETIME
+from sqlalchemy import create_engine, MetaData, TEXT, Integer, Float, Table, Column, \
+    ForeignKey, String, BIGINT, DATE, DATETIME, text
 from conf import constants
 
 def load_db_table(ticker, df, dbname, dbhost, dbuser, dbpassword, table):
@@ -137,8 +138,19 @@ def execute_insert_query(tablename, dbname, dbhost, dbuser, dbpassword,params):
         , dbname=dbname
     )
     engine = create_engine(conn_string)
-    ins = tablename.insert().values(**params)
-    print (str(ins))
+    column_value_list = [key+":"+key for key in params.keys()]
+    insert_columns_text = ','.join(column_value_list)
+    insert_text = 'insert into {} values({})'.format(tablename,insert_columns_text)
+    print(insert_text)
+
+    text_insert  = text(insert_text)
+
+    with engine.connect() as conn:
+        conn.execute(text_insert,**params)
+    #print (insert_text)
+
+    #ins = tablename.insert().values(**params)
+    #print (str(ins))
     return constants.SUCCESS
 
 

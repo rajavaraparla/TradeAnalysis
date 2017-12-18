@@ -40,12 +40,13 @@ if __name__ == "__main__":
     FILE_NAME = constants.FILES_LOCATION+os.sep+time.strftime(constants.FILE_TIME_FORMAT)+constants.FILE_PDF_EXTENSION
     trade_utils.generate_pdf_olh_intra(OLH_TRADES,FILE_NAME)
     trade_utils.sendMail(FILE_NAME)
-    trade_utils.insert_olh_intra_trade_db(olh_trade_class_list = OLH_TRADES
-                                          ,dbhost = config.DB_HOST
-                                          , dbname = config.DB_NAME
-                                          , dbpassword = config.DB_PASSWORD
-                                          , dbuser = config.DB_USER
-                                          , tablename = config.DB_INTRA_OLH_TRADE_TABLENAME)
+
+    # trade_utils.insert_olh_intra_trade_db(olh_trade_class_list = OLH_TRADES
+    #                                       ,dbhost = config.DB_HOST
+    #                                       , dbname = config.DB_NAME
+    #                                       , dbpassword = config.DB_PASSWORD
+    #                                       , dbuser = config.DB_USER
+    #                                       , tablename = config.DB_INTRA_OLH_TRADE_TABLENAME)
     # Load table 'intra_olh_trade' with olh_trade_data
     for olh_trade_class in OLH_TRADES:
         PARAMS = {}
