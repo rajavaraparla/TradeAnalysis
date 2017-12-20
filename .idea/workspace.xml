@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42929506-72d1-447c-bb82-74bceaab0f4c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/BackFill/BackFillOLHIntra.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Classes/OLHEodClass.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Classes/OLHBasicClass.py" afterPath="$PROJECT_DIR$/Classes/OLHBasicClass.py" />
+      <change beforePath="$PROJECT_DIR$/Load/LoadHistoryDB.py" afterPath="$PROJECT_DIR$/Load/LoadHistoryDB.py" />
       <change beforePath="$PROJECT_DIR$/OpenHighLow.py" afterPath="$PROJECT_DIR$/OpenHighLow.py" />
       <change beforePath="$PROJECT_DIR$/conf/constants.py" afterPath="$PROJECT_DIR$/conf/constants.py" />
       <change beforePath="$PROJECT_DIR$/utils/db_utils.py" afterPath="$PROJECT_DIR$/utils/db_utils.py" />
+      <change beforePath="$PROJECT_DIR$/utils/trade_utils.py" afterPath="$PROJECT_DIR$/utils/trade_utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +24,8 @@
       <file leaf-file-name="trade_utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/trade_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="418" column="46" lean-forward="false" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
+            <state relative-caret-position="525">
+              <caret line="356" column="39" lean-forward="true" selection-start-line="356" selection-start-column="39" selection-end-line="356" selection-end-column="39" />
               <folding>
                 <element signature="e#80#91#0" expanded="true" />
               </folding>
@@ -31,22 +36,10 @@
       <file leaf-file-name="LoadHistoryDB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Load/LoadHistoryDB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+            <state relative-caret-position="216">
+              <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/db_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="121" column="24" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="24" />
-              <folding>
-                <element signature="e#64#78#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,8 +48,8 @@
       <file leaf-file-name="open_high_low.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IntraStratagies/open_high_low.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="47" column="17" lean-forward="true" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state relative-caret-position="399">
+              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="e#86#108#0" expanded="true" />
               </folding>
@@ -64,21 +57,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/constants.py">
+      <file leaf-file-name="db_utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/db_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="270" column="31" lean-forward="true" selection-start-line="270" selection-start-column="31" selection-end-line="270" selection-end-column="31" />
+              <folding>
+                <element signature="e#64#78#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OLHEodClass.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/OLHEodClass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="13" column="89" lean-forward="false" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="89" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenHighLow.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OLHSheetsClass.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/OLHSheetsClass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="531">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenHighLow.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenHighLow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding>
                 <element signature="e#125#147#0" expanded="true" />
               </folding>
@@ -86,42 +101,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="OLHBasicClass.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/OLHBasicClass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LoadIntraData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Load/LoadIntraData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="168">
+              <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OLHTradeClass.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Classes/OLHTradeClass.py">
+      <file leaf-file-name="BackFillOLHIntra.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BackFill/BackFillOLHIntra.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="778">
-              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/setup.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="72">
+              <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+              <folding>
+                <element signature="e#42#88#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,9 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>generateGannSquare</find>
-      <find>credentials_file</find>
-      <find>oh</find>
       <find>CONFDIR</find>
       <find>OLHTradeClass</find>
       <find>BAJAJ</find>
@@ -167,6 +171,9 @@
       <find>load_db_table</find>
       <find>DATE</find>
       <find>TIME_FORMAT</find>
+      <find>table_Obj</find>
+      <find>get_prevnday_candles</find>
+      <find>olh_trade_class</find>
     </findStrings>
     <replaceStrings>
       <replace>target</replace>
@@ -204,15 +211,18 @@
         <option value="$PROJECT_DIR$/Classes/OLHTradeClass.py" />
         <option value="$PROJECT_DIR$/Load/test.py" />
         <option value="$PROJECT_DIR$/IntraStratagies/open_high_low.py" />
-        <option value="$PROJECT_DIR$/Classes/OLHBasicClass.py" />
-        <option value="$PROJECT_DIR$/Load/LoadIntraData.py" />
-        <option value="$PROJECT_DIR$/Load/LoadHistoryDB.py" />
         <option value="$PROJECT_DIR$/conf/setup.sql" />
         <option value="$PROJECT_DIR$/conf/config.py" />
         <option value="$PROJECT_DIR$/utils/trade_utils.py" />
-        <option value="$PROJECT_DIR$/conf/constants.py" />
-        <option value="$PROJECT_DIR$/utils/db_utils.py" />
         <option value="$PROJECT_DIR$/OpenHighLow.py" />
+        <option value="$PROJECT_DIR$/conf/constants.py" />
+        <option value="$PROJECT_DIR$/Load/LoadIntraData.py" />
+        <option value="$PROJECT_DIR$/Load/LoadHistoryDB.py" />
+        <option value="$PROJECT_DIR$/Classes/OLHEODClass.py" />
+        <option value="$PROJECT_DIR$/Classes/OLHEodClass.py" />
+        <option value="$PROJECT_DIR$/Classes/OLHBasicClass.py" />
+        <option value="$PROJECT_DIR$/BackFill/BackFillOLHIntra.py" />
+        <option value="$PROJECT_DIR$/utils/db_utils.py" />
       </list>
     </option>
   </component>
@@ -264,7 +274,12 @@
             <path>
               <item name="TradeAnalysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="TradeAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="IntraStratagies" type="462c0819:PsiDirectoryNode" />
+              <item name="BackFill" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TradeAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradeAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TradeAnalysis" type="b2602c69:ProjectViewProjectNode" />
@@ -297,14 +312,15 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis" />
-      <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis\conf" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis\Classes" />
       <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis" />
       <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis\BACKUPS" />
       <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis\Load" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis" />
+      <recent name="C:\Users\nvarapar\PycharmProjects\TradeAnalysis\conf" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -319,7 +335,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.OpenHighLow">
+  <component name="RunManager" selected="Python.BackFillOLHIntra">
+    <configuration name="BackFillOLHIntra" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BackFill" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TradeAnalysis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BackFill/BackFillOLHIntra.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="LoadHistoryDB" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -374,24 +408,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="db_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="TradeAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/db_utils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -414,16 +430,16 @@
       <item index="0" class="java.lang.String" itemvalue="Python.OpenHighLow" />
       <item index="1" class="java.lang.String" itemvalue="Python.LoadIntraData" />
       <item index="2" class="java.lang.String" itemvalue="Python.LoadHistoryDB" />
-      <item index="3" class="java.lang.String" itemvalue="Python.db_utils" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.BackFillOLHIntra" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.OpenHighLow" />
+        <item index="0" class="java.lang.String" itemvalue="Python.BackFillOLHIntra" />
         <item index="1" class="java.lang.String" itemvalue="Python.LoadHistoryDB" />
         <item index="2" class="java.lang.String" itemvalue="Python.LoadIntraData" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.db_utils" />
+        <item index="3" class="java.lang.String" itemvalue="Python.OpenHighLow" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -602,24 +618,31 @@
       <option name="project" value="LOCAL" />
       <updated>1513620853964</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Inserting OLH Data into table">
+      <created>1513623528620</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1513623528620</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21302083" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21302083" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45052633" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25863874" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25863874" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986228" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39824733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -643,38 +666,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils/trade_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="26" />
-          <folding>
-            <element signature="e#80#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Load/LoadHistoryDB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Load/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -877,13 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/OLHSheetsClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Load/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -891,14 +880,6 @@
           <folding>
             <element signature="e#1#27#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/OLHBasicClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,24 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Load/LoadIntraData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Load/LoadHistoryDB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Classes/OLHTradeClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="778">
@@ -936,66 +899,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/trade_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="418" column="46" lean-forward="false" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
-          <folding>
-            <element signature="e#80#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntraStratagies/open_high_low.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="47" column="17" lean-forward="true" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-          <folding>
-            <element signature="e#86#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/setup.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        <state relative-caret-position="599">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        <state relative-caret-position="687">
+          <caret line="142" column="0" lean-forward="true" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Load/LoadIntraData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Load/LoadHistoryDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/OLHBasicEodClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/OLHSheetsClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/OLHEodClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="89" lean-forward="false" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/OLHBasicClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/trade_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="356" column="39" lean-forward="true" selection-start-line="356" selection-start-column="39" selection-end-line="356" selection-end-column="39" />
+          <folding>
+            <element signature="e#80#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/db_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="121" column="24" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="24" />
+        <state relative-caret-position="357">
+          <caret line="270" column="31" lean-forward="true" selection-start-line="270" selection-start-column="31" selection-end-line="270" selection-end-column="31" />
           <folding>
             <element signature="e#64#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IntraStratagies/open_high_low.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="e#86#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OpenHighLow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding>
             <element signature="e#125#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackFill/BackFillOLHIntra.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding>
+            <element signature="e#42#88#0" expanded="true" />
           </folding>
         </state>
       </provider>

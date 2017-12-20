@@ -10,9 +10,10 @@ import gspread # Google Spread Sheets
 from oauth2client.client import SignedJwtAssertionCredentials # Authention related
 
 from IntraStratagies import open_high_low as olh
-from utils import trade_utils
+from utils import trade_utils, db_utils
 from conf import constants, config
 import time
+import datetime
 
 # Get the base project Dir
 BASEDIR = os.path.dirname(os.getcwd())
@@ -41,21 +42,23 @@ if __name__ == "__main__":
     trade_utils.generate_pdf_olh_intra(OLH_TRADES,FILE_NAME)
     trade_utils.sendMail(FILE_NAME)
 
-    # trade_utils.insert_olh_intra_trade_db(olh_trade_class_list = OLH_TRADES
-    #                                       ,dbhost = config.DB_HOST
-    #                                       , dbname = config.DB_NAME
-    #                                       , dbpassword = config.DB_PASSWORD
-    #                                       , dbuser = config.DB_USER
-    #                                       , tablename = config.DB_INTRA_OLH_TRADE_TABLENAME)
+    db_utils.execute_delete_query(dbhost = config.DB_HOST
+                                  , dbname = config.DB_NAME
+                                  , dbpassword = config.DB_PASSWORD
+                                  , dbuser = config.DB_USER
+                                  , tablename = config.DB_INTRA_OLH_TRADE_TABLENAME
+                                  , params={constants.INTRA_OLH_TRADE_TRADE_DATE :
+                                                datetime.datetime.today().strftime(constants.DATE_FORMAT)}
+                                  )
+
+
     # Load table 'intra_olh_trade' with olh_trade_data
-    for olh_trade_class in OLH_TRADES:
-        PARAMS = {}
-        PARAMS['script'] = olh_trade_class.script
+    trade_utils.insert_olh_intra_trade_db(olh_trade_class_list = OLH_TRADES
+                                          ,dbhost = config.DB_HOST
+                                          , dbname = config.DB_NAME
+                                          , dbpassword = config.DB_PASSWORD
+                                          , dbuser = config.DB_USER
+                                          , tablename = config.DB_INTRA_OLH_TRADE_TABLENAME
+                                          )
 
-        PARAMS['trade_time'] = olh_trade_class.script
 
-        #print (str(olh_trade_class))
-        pass
-
-    #print("\n".join(str(x) for x in OLH_TRADES))
-    #trade_utils.generate_excel_olh_intra(OLH_TRADES,'test.xlsx')

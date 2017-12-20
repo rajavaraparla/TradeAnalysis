@@ -19,7 +19,7 @@ from utils import trade_utils, db_utils
 
 if __name__ == '__main__':
     ALL_SYMBOLS = constants.ALL_SYMBOLS
-    TIME_DELTA = 0
+    TIME_DELTA = 7
     START_DATE = date.today() - timedelta(TIME_DELTA)
     END_DATE = date.today()
     for symbol in ALL_SYMBOLS:

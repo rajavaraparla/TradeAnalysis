@@ -128,6 +128,22 @@ INTRA_OLH_TRADE_TARGET4 = "Target4"
 INTRA_OLH_TRADE_TARGET5 = "Target5"
 
 
+TIME_930 = "09:30:00"
+TIME_5MIN = "5min"
+TIME_15MIN = "15min"
+TIME_30MIN = "30min"
+TIME_HOUR = "hour"
+
+
+tables_time = {"5min":"intra_data_5min"
+    , "15min":"intra_data_15min"
+    , "30min":"intra_data_30min"
+    , "hour":"intra_data_hour"
+               }
+
+
+
+
 
 
 

@@ -19,9 +19,10 @@ class OLHBasicClass:
 
     def __repr__(self):
         ''' Representation of OLHBasicClass '''
-        olh_str = 'OLHBasicClass({},{},{},{},{},{},{}'.format(
+        olh_str = 'OLHBasicClass({},{},{},{},{},{},{})'.format(
             self.script, self.trade_time, self.p_open, self.high, self.low, self.ltp, self.volume, self.pclose
         )
+        return olh_str
 
     def __str__(self):
         ''' String representation of OLHBasicClass '''

@@ -390,9 +390,10 @@ def insert_olh_intra_trade_db(olh_trade_class_list, tablename, dbname, dbhost, d
         tradedate = datetime.date.today().strftime(constants.DATE_FORMAT)
         tradetime = time.strftime(constants.TIME_FORMAT)
         reg_exp = re.compile(constants.NSE_STRING + "-(.*?),")
-        nsesignal = reg_exp.search(olh_trade_class.trade_str)
+        #nsesignal = reg_exp.search(olh_trade_class.trade_str)
+        nsesignal = (reg_exp.search(olh_trade_class.trade_str)).groups()[0]
         reg_exp = re.compile(constants.BSE_STRING + "-(.*?)_")
-        bsesignal = reg_exp.search(olh_trade_class.trade_str)
+        bsesignal = (reg_exp.search(olh_trade_class.trade_str)).groups()[0]
         params_dict = {}
         params_dict[constants.INTRA_OLH_TRADE_TICKER] = script
         params_dict[constants.INTRA_OLH_TRADE_CLOSE] = cmp
@@ -422,7 +423,7 @@ def insert_olh_intra_trade_db(olh_trade_class_list, tablename, dbname, dbhost, d
                                                       , dbpassword = dbpassword
                                                       , dbuser = dbuser
                                                       , params = params_dict)
-        return insert_status
+
 
 
 
