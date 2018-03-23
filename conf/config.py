@@ -4,7 +4,7 @@ This will contain configuration related defines
 DB_NAME = "trade_data"
 DB_USER = "tradeuser"
 DB_PASSWORD = "Trade123#"
-DB_HOST = "localhost"
+DB_HOST = "172.29.18.209"
 
 DB_INTRA_5MIN_TABLE = "intra_data_5min"
 DB_INTRA_15MIN_TABLE = "intra_data_15min"
