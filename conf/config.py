@@ -1,6 +1,7 @@
 '''
 This will contain configuration related defines
 '''
+# TEST COMMENT
 DB_NAME = "trade_data"
 DB_USER = "tradeuser"
 DB_PASSWORD = "Trade123#"
